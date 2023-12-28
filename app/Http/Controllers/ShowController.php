@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\show;
+use DB;
 
 class ShowController extends Controller
 {
@@ -25,7 +26,8 @@ class ShowController extends Controller
     public function show()
     {
         $list = show::all();
-       return view('show',['list'=>$list]);
+        $users = DB::select("select * from users");
+       return view('show',['list'=>$list,'users'=>$users]);
     } 
 
     public function edit_show($id)
@@ -40,14 +42,14 @@ class ShowController extends Controller
         $show->name = $request->input('name');
         $show->city = $request->input('city');
         $show->save();
-        return redirect('/show');
+        return redirect('/list');
     }
 
     public function delete_show($id)
     {
         $show = show::find($id);
         $show->delete();
-        return redirect('/show');
+        return redirect('/list');
     }
 }
 

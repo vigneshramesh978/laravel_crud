@@ -21,7 +21,8 @@ class LogController extends Controller
     {
 
        $users = DB::select("select * from users");
-       return view('list',['users'=>$users]);
+       $list = show::all();
+       return view('list',['users'=>$users,'list'=>$list]);
     } 
 
     public function edit($id)

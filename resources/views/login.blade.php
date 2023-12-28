@@ -21,7 +21,7 @@
         <label>city : <input type="text" name="city" required></label>
         <input type="submit" value="submit" name="submit">
     </form>
-    <h1><a href="{{url('/show')}}">show</a></h1>
+    <h1><a href="{{url('/list')}}">show</a></h1>
 
 </body>
 </html>

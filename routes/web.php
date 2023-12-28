@@ -24,7 +24,7 @@ Route::get('/delete/{id}', [LogController::class, 'delete']);
 //Route::view('log','page');
 
 Route::post('/add', [ShowController::class, 'add']);
-Route::get('/show', [ShowController::class, 'show']);
+//Route::get('/show', [ShowController::class, 'show']);
 Route::get('/edit_show/{id}', [ShowController::class, 'edit_show']);
 Route::post('/show_update/{id}', [ShowController::class, 'show_update']);
 Route::get('/delete_show/{id}', [ShowController::class, 'delete_show']);
